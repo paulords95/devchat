@@ -1,0 +1,83 @@
+.page-wrap {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  background-color: #6d5dd2;
+}
+
+.page-title {
+  position: absolute;
+  font-size: 5rem;
+  color: white;
+  font-family: "MuseoModerno", cursive;
+}
+.user-wrap {
+  position: absolute;
+  margin: 0 auto;
+  top: 21rem;
+  background-color: wheat;
+  height: 50px;
+  width: 150px;
+}
+.room-btn {
+  position: absolute;
+  margin: 0 auto;
+  top: 21rem;
+  color: white;
+  height: 30px;
+  width: 230px;
+  text-align: center;
+  font-size: 22px;
+  font-family: "Mulish", sans-serif;
+  font-weight: 700;
+  padding: 1rem;
+  padding-bottom: 1.5rem;
+  border-radius: 6px;
+  background-color: #769446;
+  text-decoration: none;
+  transition: all 1s;
+}
+
+.room-btn:hover {
+  background-color: #8ea56d;
+}
+
+.landing-img {
+  position: absolute;
+  bottom: 0;
+}
+
+.user-name {
+  position: absolute;
+  top: 21rem;
+}
+
+.user-name > div > input {
+  height: 60px;
+  width: 230px;
+  border-radius: 6px;
+  font-size: 28px;
+  font-family: "Mulish", sans-serif;
+  font-weight: 400;
+  text-align: justify;
+  border-style: none;
+  opacity: 0;
+  padding-left: 20px;
+  transition: all 1s;
+}
+
+.join-icon {
+  position: absolute;
+  width: 15%;
+  top: 8px;
+  right: 5px;
+  background-color: rgba(0, 0, 0, 0.171);
+  border-radius: 50%;
+  padding: 5px;
+}
+.join-icon:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.041);
+}
