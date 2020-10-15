@@ -26,3 +26,26 @@
   transition: all 1s;
   background-color: white;
 }
+
+.rooms-list {
+  position: absolute;
+  list-style: none;
+  font-family: "Mulish", sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  top: 30px;
+  width: 20rem;
+}
+
+.rooms-list > li {
+  padding: 15px;
+}
+
+.chat-box {
+  margin-top: 50px;
+  margin-left: 10rem;
+  width: 74%;
+  height: 89%;
+  border-radius: 0px 6px 6px 0px;
+  background-color: #c4c4c444;
+}
