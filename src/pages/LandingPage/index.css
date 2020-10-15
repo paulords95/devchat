@@ -33,20 +33,36 @@
   font-family: "Mulish", sans-serif;
   font-weight: 700;
   padding: 1rem;
-  padding-bottom: 1.5rem;
+
   border-radius: 6px;
   background-color: #769446;
   text-decoration: none;
-  transition: all 1s;
+  transition: all 0.3s;
 }
 
 .room-btn:hover {
-  background-color: #8ea56d;
+  background-color: #9dc26a;
 }
 
 .landing-img {
   position: absolute;
   bottom: 0;
+}
+
+#submit {
+  position: absolute;
+  width: 17%;
+  top: 8px;
+  right: 5px;
+  background-color: rgba(0, 0, 0, 0.171);
+  border-radius: 50%;
+  padding: 5px;
+  border-style: none;
+}
+
+#submit:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.041);
 }
 
 .user-name {
@@ -66,18 +82,4 @@
   opacity: 0;
   padding-left: 20px;
   transition: all 1s;
-}
-
-.join-icon {
-  position: absolute;
-  width: 15%;
-  top: 8px;
-  right: 5px;
-  background-color: rgba(0, 0, 0, 0.171);
-  border-radius: 50%;
-  padding: 5px;
-}
-.join-icon:hover {
-  cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.041);
 }

@@ -11,16 +11,17 @@ const LandingPage = () => {
   const UserJoin = () => {
     if (name) {
       return (
-        <form className="user-name">
+        <form action="/rooms" className="user-name">
           <div>
             <input
               type="text"
               placeholder="Nome"
+              name="usuário"
               maxlength="8"
-              id="fname"
-              name="fname"
             />
-            <img src={joinIcon} alt="Entrar" className="join-icon" />
+            <button type="submit" id="submit">
+              <img src={joinIcon} alt="Entrar" className="join-icon" />
+            </button>
           </div>
         </form>
       );

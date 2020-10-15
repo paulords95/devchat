@@ -1,0 +1,28 @@
+.page-wrap {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  background-color: #6d5dd2;
+  overflow: hidden;
+}
+
+.page-title-rooms {
+  position: absolute;
+  font-size: 5rem;
+  top: -10rem;
+  transition: all 1s;
+  color: white;
+  font-family: "MuseoModerno", cursive;
+}
+
+.chat-wrap {
+  position: absolute;
+  width: 80%;
+  border-radius: 5px;
+  top: 30rem;
+  height: 75vh;
+  transition: all 1s;
+  background-color: white;
+}
