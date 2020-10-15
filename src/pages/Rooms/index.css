@@ -25,6 +25,7 @@
   height: 75vh;
   transition: all 1s;
   background-color: white;
+  max-width: 70rem;
 }
 
 .rooms-list {
@@ -33,7 +34,7 @@
   font-family: "Mulish", sans-serif;
   font-size: 18px;
   font-weight: 800;
-  top: 30px;
+  top: 10px;
   width: 20rem;
 }
 
@@ -42,9 +43,10 @@
 }
 
 .chat-box {
-  margin-top: 50px;
+  position: absolute;
+  margin-top: 40px;
   margin-left: 10rem;
-  width: 74%;
+  width: calc(100% - 12rem);
   height: 89%;
   border-radius: 0px 6px 6px 0px;
   background-color: #c4c4c444;
