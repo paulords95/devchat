@@ -34,20 +34,21 @@
   font-family: "Mulish", sans-serif;
   font-size: 18px;
   font-weight: 800;
-  top: 10px;
+  top: -15px;
   width: 20rem;
 }
 
 .rooms-list > li {
-  padding: 15px;
-  margin-left: -30px;
-  max-width: 120px;
+  padding: 25px;
+  margin-left: -58px;
 }
 
 .rooms-list > li > a {
+  position: absolute;
   text-decoration: none;
   color: black;
-  padding: 15px;
+  width: 133px;
+  padding: 10px;
 }
 
 .rooms-list > li > a:hover {
@@ -55,6 +56,7 @@
   background-color: #c4c4c444;
   border-radius: 7px 0px 0px 7px;
 }
+
 .chat-box {
   position: absolute;
   margin-top: 28px;

@@ -1,4 +1,7 @@
 .geral-room {
+  display: flex;
+  position: absolute;
+  justify-content: center;
   width: 100%;
   height: 100%;
 }

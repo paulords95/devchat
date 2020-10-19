@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.room-name {
+  position: absolute;
+  margin: 0 auto;
+  font-family: "Mulish", sans-serif;
+}
+
+.new-message {
+  display: flex;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  padding-left: 30px;
+}
+
+.send-message {
+  width: 90%;
+  font-family: "Mulish", sans-serif;
+  height: 25px;
+  display: block;
+}
+
+.send-message-btn {
+  position: relative;
+  font-family: "Mulish", sans-serif;
+  width: 100px;
+  right: 30px;
+  font-weight: bolder;
+}

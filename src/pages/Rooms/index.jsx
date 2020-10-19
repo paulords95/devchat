@@ -1,24 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 import "./index.css";
 import Routes from "./routes";
 
 const Rooms = () => {
-  const [pageLoad, setPageLoad] = useState(false);
   useEffect(() => {
-    if (window.location.pathname === "/rooms") {
-      document.querySelector(".page-title-rooms").style.top = "0rem";
-      document.querySelector(".chat-wrap").style.top = "11rem";
-      setPageLoad(true);
-    }
+    document.querySelector(".page-title-rooms").style.top = "0rem";
+    document.querySelector(".chat-wrap").style.top = "11rem";
   }, []);
-  useEffect(() => {
-    if (pageLoad) {
-      document.querySelector(".page-title-rooms").style.top = "0rem";
-      document.querySelector(".chat-wrap").style.top = "11rem";
-    }
-  }, [pageLoad]);
-
   return (
     <div className="page-wrap">
       <h1 className="page-title-rooms">Dev Chat</h1>
