@@ -40,5 +40,11 @@
   font-family: "Mulish", sans-serif;
   width: 100px;
   right: 30px;
+  color: white;
   font-weight: bolder;
+  background-color: #769446;
+  border: none;
+}
+.send-message-btn:hover {
+  background-color: #9dc26a;
 }

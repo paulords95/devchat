@@ -7,6 +7,7 @@ const Rooms = () => {
   useEffect(() => {
     document.querySelector(".page-title-rooms").style.top = "0rem";
     document.querySelector(".chat-wrap").style.top = "11rem";
+
     if (window.location.pathname === "/rooms/geral") {
       document.querySelector("#geral").style.backgroundColor = "#c4c4c444";
       document.querySelector("#geral").style.borderRadius = "6px 0px 0px 6px";
