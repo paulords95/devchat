@@ -22,7 +22,7 @@
   width: 150px;
 }
 .room-btn {
-  position: absolute;
+  position: relative;
   margin: 0 auto;
   top: 21rem;
   color: white;

@@ -1,0 +1,14 @@
+.message-card {
+  width: max-content;
+  height: auto;
+  background-color: rgb(208, 208, 214);
+  margin-top: 10px;
+  border-radius: 7px;
+  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  max-width: 20em;
+}
+.text-message {
+  max-width: calc(100% - 0rem);
+}
