@@ -5,8 +5,18 @@ import Routes from "./routes";
 
 const Rooms = () => {
   useEffect(() => {
-    document.querySelector(".page-title-rooms").style.top = "0rem";
-    document.querySelector(".chat-wrap").style.top = "11rem";
+    const pgTitle = document.querySelector(".page-title-rooms");
+    const pgChat = document.querySelector(".chat-wrap");
+
+    if (window.location.pathname === "/rooms") {
+      pgTitle.style.top = "0rem";
+      pgChat.style.top = "11rem";
+    } else {
+      pgTitle.style.top = "0rem";
+      pgChat.style.top = "11rem";
+      pgTitle.style.transition = "all 0s";
+      pgChat.style.transition = "all 0s";
+    }
 
     if (window.location.pathname === "/rooms/geral") {
       document.querySelector("#geral").style.backgroundColor = "#c4c4c444";
