@@ -65,6 +65,10 @@
   background-color: rgba(0, 0, 0, 0.041);
 }
 
+#submit:focus {
+  outline: 1px solid #ffffff;
+}
+
 .user-name {
   position: absolute;
   top: 21rem;
@@ -73,7 +77,6 @@
 .user-name > div > input {
   height: 60px;
   width: 230px;
-  border-radius: 6px;
   font-size: 28px;
   font-family: "Mulish", sans-serif;
   font-weight: 400;
@@ -82,4 +85,8 @@
   opacity: 0;
   padding-left: 20px;
   transition: all 1s;
+}
+
+.user-name > div > input:focus {
+  outline: 3px solid #8f87c0;
 }

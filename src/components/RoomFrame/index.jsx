@@ -1,17 +1,17 @@
 import React from "react";
-import MessageCard from "../MessageCard";
+import { useEffect } from "react";
 
 import "./index.css";
 
 const RoomFrame = (props) => {
+  useEffect(() => {
+    document.querySelector(".container").style.left = "0";
+  }, []);
+
   return (
     <div className="container">
       <h1 className="room-name">{props.roomName}</h1>
-      <div className="messages-container">
-        <MessageCard message="Primeira mensagem teste" />
-        <MessageCard message="Segunda mensagem teste agora ainda maior" />
-        <MessageCard message="Terceira mensagem teste agora tentando ser maior que a outra ainda. Terceira mensagem teste agora tentando ser maior que a outra ainda. Terceira mensagem teste agora tentando ser maior que a outra ainda" />
-      </div>
+      <div className="messages-container">{props.messages}</div>
       <form
         onSubmit={(e) => {
           e.preventDefault();

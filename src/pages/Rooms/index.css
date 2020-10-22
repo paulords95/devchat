@@ -62,7 +62,24 @@
   margin-top: 28px;
   margin-left: 10rem;
   width: calc(100% - 12rem);
-  height: 89%;
+  height: 92.5%;
   border-radius: 0px 6px 6px 0px;
   background-color: #c4c4c444;
+}
+
+.welcome-screen {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 10px;
+  margin: 0 auto;
+  background-color: white;
+  width: 95%;
+  font-family: "Mulish", sans-serif;
+}
+
+.welcome-user {
+  font-size: 35px;
+  width: 75%;
+  text-align: center;
 }

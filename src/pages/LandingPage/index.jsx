@@ -16,8 +16,10 @@ const LandingPage = () => {
             <input
               type="text"
               placeholder="Nome"
-              name="usuário"
-              maxlength="8"
+              name="usuario"
+              maxLength="8"
+              minLength="3"
+              required
             />
             <button type="submit" id="submit">
               <img src={joinIcon} alt="Entrar" className="join-icon" />
