@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import socketIOClient from "socket.io-client";
 
 import RoomFrame from "../RoomFrame";
 import MessageCard from "../MessageCard";
@@ -6,17 +7,28 @@ import MessageCard from "../MessageCard";
 import "./index.css";
 
 const GeralRoom = () => {
-  const geralMessages = () => {
-    return (
-      <>
-        <MessageCard message="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua" />
-        <MessageCard message=" Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris " />
-      </>
-    );
-  };
+  const ENDPOINT = "http://127.0.0.1:5000";
+  const [log, setLog] = useState([]);
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const param = urlParams.get("usuario");
+
+  useEffect(() => {
+    const socket = socketIOClient(ENDPOINT);
+
+    socket.on("usuario entrou", () => {
+      setLog([...log, `${param} entrou`]);
+    });
+  }, []);
+
   return (
     <div className="geral-room">
-      <RoomFrame roomName="Sala Geral" messages={geralMessages()} />
+      <RoomFrame
+        roomName="Sala Geral"
+        messages={log.map((logMsg) => (
+          <MessageCard message={logMsg} />
+        ))}
+      />
     </div>
   );
 };
