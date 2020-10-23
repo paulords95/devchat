@@ -3,6 +3,7 @@ import socketIOClient from "socket.io-client";
 
 import RoomFrame from "../RoomFrame";
 import MessageCard from "../MessageCard";
+import LogCard from "../LogCard";
 
 import "./index.css";
 
@@ -17,16 +18,19 @@ const GeralRoom = () => {
     const socket = socketIOClient(ENDPOINT);
 
     socket.on("usuario entrou", () => {
-      setLog([...log, `${param} entrou`]);
+      setLog((oldLog) => [...oldLog, `${param} entrou`]);
     });
-  }, []);
+    socket.on("usuario saiu", () => {
+      setLog((oldLog) => [...oldLog, `${param} saiu`]);
+    });
+  }, [param]);
 
   return (
     <div className="geral-room">
       <RoomFrame
         roomName="Sala Geral"
         messages={log.map((logMsg) => (
-          <MessageCard message={logMsg} />
+          <LogCard key={log.indexOf(logMsg)} message={logMsg} />
         ))}
       />
     </div>

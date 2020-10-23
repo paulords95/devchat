@@ -1,0 +1,14 @@
+.log-card {
+  width: max-content;
+  height: auto;
+  margin-top: 10px;
+  border-radius: 7px;
+  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  max-width: 20em;
+  font-weight: bold;
+}
+.log-message {
+  max-width: calc(100% - 0rem);
+}
