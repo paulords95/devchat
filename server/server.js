@@ -16,9 +16,11 @@ const io = socket(server)
 io.on('connection', (socket)=> {
     io.emit('usuario entrou')
     console.log('Usuário entrou')
+
     socket.on('disconnect', ()=> {
         console.log('Usuário desconectou')
         io.emit('usuario saiu')
     })
+
 
 })

@@ -1,17 +1,22 @@
 import React from "react";
 import { useEffect } from "react";
+// import socketIOClient from "socket.io-client";
 
 import "./index.css";
 
 const RoomFrame = (props) => {
+  // const ENDPOINT = "http://127.0.0.1:5000";
   useEffect(() => {
     document.querySelector(".container").style.left = "0";
-  }, []);
+
+    //const socket = socketIOClient(ENDPOINT);
+  });
 
   return (
     <div className="container">
       <h1 className="room-name">{props.roomName}</h1>
       <div className="messages-container">{props.messages}</div>
+      <div className="messages-container">{props.logs}</div>
       <form
         onSubmit={(e) => {
           e.preventDefault();

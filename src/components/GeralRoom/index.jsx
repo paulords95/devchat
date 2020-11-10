@@ -29,7 +29,13 @@ const GeralRoom = () => {
     <div className="geral-room">
       <RoomFrame
         roomName="Sala Geral"
-        messages={log.map((logMsg) => (
+        messages={
+          <>
+            <MessageCard message="teste" />
+            <MessageCard message="teste numero dois" />
+          </>
+        }
+        logs={log.map((logMsg) => (
           <LogCard key={log.indexOf(logMsg)} message={logMsg} />
         ))}
       />
