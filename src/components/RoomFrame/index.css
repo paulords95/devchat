@@ -40,6 +40,13 @@
   margin-left: 15px;
 }
 
+.logs-container {
+  flex: 1;
+  position: relative;
+  margin-top: 50px;
+  right: -25%;
+}
+
 .new-message {
   display: flex;
   position: absolute;

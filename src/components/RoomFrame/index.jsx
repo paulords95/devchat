@@ -16,7 +16,7 @@ const RoomFrame = (props) => {
     <div className="container">
       <h1 className="room-name">{props.roomName}</h1>
       <div className="messages-container">{props.messages}</div>
-      <div className="messages-container">{props.logs}</div>
+      <div className="logs-container">{props.logs}</div>
       <form
         onSubmit={(e) => {
           e.preventDefault();

@@ -8,22 +8,31 @@ import LogCard from "../LogCard";
 import "./index.css";
 
 const GeralRoom = () => {
+  let user;
+  let room;
   const ENDPOINT = "http://127.0.0.1:5000";
   const [log, setLog] = useState([]);
 
   const urlParams = new URLSearchParams(window.location.search);
   const param = urlParams.get("usuario");
-
+  room = window.location.pathname.split("/")[2];
+  user = param;
   useEffect(() => {
     const socket = socketIOClient(ENDPOINT);
 
     socket.on("usuario entrou", () => {
-      setLog((oldLog) => [...oldLog, `${param} entrou`]);
+      socket.emit("join", user, room);
+      socket.on("joined", (user) => {
+        setLog((oldLog) => [...oldLog, `${user}`]);
+      });
+      console.log(user, room);
     });
-    socket.on("usuario saiu", () => {
-      setLog((oldLog) => [...oldLog, `${param} saiu`]);
+    socket.on("usuario saiu", (userleave) => {
+      //    setLog((oldLog) => [...oldLog, `${userleave} saiu`]);
+      socket.emit("leave", user);
     });
-  }, [param]);
+    console.log(log);
+  }, [user, room]);
 
   return (
     <div className="geral-room">
@@ -36,7 +45,7 @@ const GeralRoom = () => {
           </>
         }
         logs={log.map((logMsg) => (
-          <LogCard key={log.indexOf(logMsg)} message={logMsg} />
+          <LogCard key={Math.random(500)} message={logMsg} />
         ))}
       />
     </div>
