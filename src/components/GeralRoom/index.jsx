@@ -1,41 +1,54 @@
 import React, { useState, useEffect } from "react";
 import socketIOClient from "socket.io-client";
+import uuid from "react-uuid";
 
 import RoomFrame from "../RoomFrame";
 import MessageCard from "../MessageCard";
-import LogCard from "../LogCard";
+// import LogCard from "../LogCard";
 
 import "./index.css";
+import ActiveUsers from "../ActiveUsers";
 
 const GeralRoom = () => {
   let user;
   let room;
+  const [onlineUsers, setOnlineUsers] = useState([""]);
+
   const ENDPOINT = "http://127.0.0.1:5000";
-  const [log, setLog] = useState([]);
 
   const urlParams = new URLSearchParams(window.location.search);
   const param = urlParams.get("usuario");
   room = window.location.pathname.split("/")[2];
-  user = param;
-  useEffect(() => {
-    const socket = socketIOClient(ENDPOINT);
 
-    socket.on("usuario entrou", () => {
-      socket.emit("join", user, room);
-      socket.on("joined", (user) => {
-        setLog((oldLog) => [...oldLog, `${user}`]);
-      });
-      console.log(user, room);
-    });
-    socket.on("usuario saiu", (userleave) => {
-      //    setLog((oldLog) => [...oldLog, `${userleave} saiu`]);
-      socket.emit("leave", user);
-    });
-    console.log(log);
-  }, [user, room]);
+  user = {
+    name: param,
+    room: room,
+    id: uuid(),
+  };
+
+  const activeUserNow = [];
+  useEffect(() => {
+    setOnlineUsers((oldList) => [...oldList, user.name]);
+  }, [user.name]);
+
+  activeUserNow.push(onlineUsers);
+  const socket = socketIOClient(ENDPOINT);
+
+  socket.on("join", () => {
+    socket.emit("userRoom", user);
+  });
+
+  socket.on("disc", () => {
+    socket.emit("disconnected", user);
+  });
 
   return (
     <div className="geral-room">
+      <ActiveUsers
+        userList={activeUserNow.map((name) => {
+          return <li key={uuid()}>{name}</li>;
+        })}
+      />
       <RoomFrame
         roomName="Sala Geral"
         messages={
@@ -44,9 +57,6 @@ const GeralRoom = () => {
             <MessageCard message="teste numero dois" />
           </>
         }
-        logs={log.map((logMsg) => (
-          <LogCard key={Math.random(500)} message={logMsg} />
-        ))}
       />
     </div>
   );

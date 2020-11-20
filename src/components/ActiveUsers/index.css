@@ -1,0 +1,42 @@
+.users-wrap {
+  position: absolute;
+  background-color: rgb(252, 252, 252);
+  height: 170px;
+  width: 150px;
+  bottom: 0px;
+  left: -150px;
+}
+
+h4 {
+  margin-bottom: 0px;
+}
+.user-list {
+  list-style: none;
+  height: 110px;
+  overflow: scroll;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+}
+
+.user-list > li {
+  margin-left: -30px;
+}
+
+*::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+*::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+*::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+*::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

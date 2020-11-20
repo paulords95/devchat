@@ -41,6 +41,7 @@ const LandingPage = () => {
           document.querySelector(".room-btn").style.opacity = "0";
           document.querySelector(".user-name > div > input").style.opacity =
             "1";
+          document.querySelector(".user-name > div > input").focus();
           document.querySelector(".room-btn").style.zIndex = "-1";
           e.preventDefault();
           setName(true);
